@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth';
 import { supabase } from '../../config/supabase';
 
@@ -25,6 +25,13 @@ export default function Dashboard() {
 
   return (
     <div>
+      <div className="text-sm breadcrumbs">
+        <ul>
+          <li>
+            <a>Conta Café</a>
+          </li>
+        </ul>
+      </div>
       Welcome, {user?.id}!<button onClick={handleSignout}>Signout</button>
       <button onClick={handleFunction}>Call function</button>
     </div>
